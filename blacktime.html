@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box{
+			border: 10px solid white;
+		}
+		strong{
+			font-size: 200px;
+			line-height: 120px;
+			margin-top: -20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function (){
+			var img = document.getElementsByTagName('img');
+			var str = '';
+			var arr = ['blacktimeimg/0.png','blacktimeimg/1.png','blacktimeimg/2.png','img/3.png','blacktimeimg/4.png','blacktimeimg/5.png','blacktimeimg/6.png','blacktimeimg/7.png','blacktimeimg/8.png','blacktimeimg/9.png']
+			newtime()
+			setInterval(newtime,1000)
+			function newtime(){
+				var time1 = new Date();
+				var hour = Bling(time1.getHours());
+				var min = Bling(time1.getMinutes());
+				var se = Bling(time1.getSeconds());
+				str = hour + min + se;
+				for(var i=0;i<img.length;i++){
+					img[i].src = arr[str.charAt(i)]
+				}
+			}
+			function Bling(nub){
+				return nub<10 ? '0'+nub:''+nub;
+			}
+		}
+	</script>
+	<body>
+		<div class="box">
+			<span class="one">
+				<img src=""/>
+				<img src=""/>
+			</span>
+			<strong>:</strong>
+			<span class="two">
+				<img src=""/>
+				<img src=""/>
+			</span>
+			<strong>:</strong>
+			<span class="three">
+				<img src=""/>
+				<img src=""/>
+			</span>
+		</div>
+	</body>
+</html>
